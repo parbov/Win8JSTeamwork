@@ -6,8 +6,19 @@
     WinJS.UI.Pages.define("/pages/placedetails/placedetails.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
+        
         ready: function (element, options) {
             // TODO: Initialize the page here.
+
+
+         //   WinJS.xhr({
+         //       url: "",
+         //       type: "GET"
+         //   }).then(function (request) {
+         //       var outputElement = document.getElementById("output");
+         //       outputElement.innerHTML = request.responseText
+         //   });
+
             WinJS.Binding.processAll(element,
                 ViewModels.places.getAt(options.indexInPlacesList));
         },
