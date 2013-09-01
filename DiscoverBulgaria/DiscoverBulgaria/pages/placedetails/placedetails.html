@@ -11,6 +11,7 @@
 
     <link href="placedetails.css" rel="stylesheet" />
     <script src="placedetails.js"></script>
+    <script src="../../js/copyText.js"></script>
 
 </head>
 <body>
@@ -21,14 +22,22 @@
                 <span class="pagetitle" data-win-bind="innerText: name"></span>
             </h1>
         </header>
-        <div>
-            <img src="#" data-win-bind="src: imgUrl" height="300" width="300" />
-            <dl>
-                <dt>Name</dt>
-                <dt>Region</dt>
-                <dd data-win-bind="innerText: region"></dd>s
-            </dl>
-        </div>
+        <section id="sectionPlaces">
+        <span>
+            <img id="placesImage" src="#" data-win-bind="src: imgUrl" height="300" width="300" />
+        </span>
+            <span>
+                <dl>
+                    <dt>Name</dt>
+                    <dd id="name" data-win-bind="innerText: name"></dd>
+                    <dt>Region</dt>
+                    <dd data-win-bind="innerText: region"></dd>
+                    <dt>Information</dt>
+                    <dd data-win-bind="innerText: text" id="placesText"></dd>
+                </dl>
+                <button id="write-text">Save information to file</button>
+            </span>
+        </section>
     </div>
 </body>
 </html>

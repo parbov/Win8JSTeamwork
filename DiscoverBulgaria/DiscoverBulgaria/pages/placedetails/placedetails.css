@@ -1,18 +1,29 @@
-﻿.placedetails div{
-    margin-left: 120px;
-    margin-right: 120px;
+﻿#placesImage {
+	float: left;
+	margin: 0 15px 5px 0;
+	border: solid 1px #bbb;
+}
+
+.placedetails div{
+    margin-left: 120pt;
+    margin-right: 120pt;
+}
+
+#sectionPlaces {
+    padding-top: 100pt;
+    margin-left: 120pt;
 }
 
 @media screen and (-ms-view-state: snapped) {
     .placedetails section[role=main] {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 20pt;
+        margin-right: 20pt;
     }
 }
 
 @media screen and (-ms-view-state: fullscreen-portrait) {
     .placedetails section[role=main] {
-        margin-left: 100px;
-        margin-right: 100px;
+        margin-left: 100pt;
+        margin-right: 100pt;
     }
 }
