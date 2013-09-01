@@ -31,16 +31,17 @@
             </h1>
         </header>
         <section aria-label="Main content" role="main">
-            <div data-win-control="WinJS.UI.ListView"
+            <div id= "grid" data-win-control="WinJS.UI.ListView"
                 data-win-options="{
                     itemDataSource: ViewModels.places.dataSource,
                     itemTemplate: select('#short-place-template'),
                     oniteminvoked: HomeCodeBehind.goToPlaceDetailsPage,
-                    selectionMode: 'none'
-                }"
-                height ="100%">
+                    selectionMode: 'none',
+                    layout : {type: WinJS.UI.GridLayout}
+                }">
             </div>
         </section>
+           
     </div>
 </body>
 </html>
