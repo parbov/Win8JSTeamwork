@@ -11,6 +11,7 @@
 
     <link href="placedetails.css" rel="stylesheet" />
     <script src="placedetails.js"></script>
+
 </head>
 <body>
     <div class="placedetails fragment">
@@ -20,22 +21,14 @@
                 <span class="pagetitle" data-win-bind="innerText: name"></span>
             </h1>
         </header>
-        <section aria-label="Main content" role="main">
-            <p>
-                Region: 
-                <span data-win-bind="innerText: region"></span>
-                <br />
-            </p>
-        </section>
-        <section>
-            <div id="output">
-
-            </div>
-        </section>
-        <section>
-            Gallery:
-            <img src="#" data-win-bind:"src:imgUrl" height="300" width="300" />
-        </section>
+        <div>
+            <img src="#" data-win-bind="src: imgUrl" height="300" width="300" />
+            <dl>
+                <dt>Name</dt>
+                <dt>Region</dt>
+                <dd data-win-bind="innerText: region"></dd>s
+            </dl>
+        </div>
     </div>
 </body>
 </html>

@@ -18,9 +18,8 @@
         //        var outputElement = document.getElementById("output");
         //        outputElement.innerHTML = request.responseText
         //    });
-
-            WinJS.Binding.processAll(element,
-                ViewModels.places.getAt(options.indexInPlacesList));
+            var x = ViewModels.places.getAt(options.indexInPlacesList);
+            WinJS.Binding.processAll(element, x);
         },
 
         unload: function () {

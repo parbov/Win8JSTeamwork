@@ -19,8 +19,9 @@
     <div class="fragment homepage">
         <div id="short-place-template" data-win-control="WinJS.Binding.Template">
             <div>
-                <span data-win-bind="innerText: name"></span>, 
+                <img src="#" data-win-bind="src: imgUrl" height="300" width="300" />
             </div>
+            <span data-win-bind="innerText: name"></span> 
         </div>
 
         <header aria-label="Header content" role="banner">
@@ -36,7 +37,8 @@
                     itemTemplate: select('#short-place-template'),
                     oniteminvoked: HomeCodeBehind.goToPlaceDetailsPage,
                     selectionMode: 'none'
-                }">
+                }"
+                height ="100%">
             </div>
         </section>
     </div>
