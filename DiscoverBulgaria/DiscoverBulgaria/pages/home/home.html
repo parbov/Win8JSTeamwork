@@ -15,13 +15,12 @@
     <script src="homecodebehind.js"></script>
 </head>
 <body>
-    <!-- The content that will be loaded and displayed. -->
     <div class="fragment homepage">
         <div id="short-place-template" data-win-control="WinJS.Binding.Template">
-            <div>
-                <img src="#" data-win-bind="src: imgUrl" height="250" width="250" />
+            <img id="imageId" src="#" data-win-bind="src: imgUrl" />
+            <div class="item-overlay">
+                <h4 id="spanId" data-win-bind="innerText: name"></h4> 
             </div>
-            <span data-win-bind="innerText: name"></span> 
         </div>
 
         <header aria-label="Header content" role="banner">
@@ -41,7 +40,6 @@
                 }">
             </div>
         </section>
-           
     </div>
 </body>
 </html>

@@ -2,22 +2,34 @@
 	float: left;
 	margin: 0 15px 5px 0;
 	border: solid 1px #bbb;
+    height: 250pt; 
+    width: 250pt; 
+}
+
+#placesText {
+    width:850pt;
 }
 
 .placedetails div{
-    margin-left: 120pt;
-    margin-right: 120pt;
+    padding-left: 120pt;
+    padding-right: 120pt;
 }
 
 #sectionPlaces {
-    padding-top: 100pt;
-    margin-left: 120pt;
+    padding-top: 120pt;
+    padding-left: 120pt;
+}
+
+#placeBar {
+    padding: 0;
+    margin: 0;
 }
 
 @media screen and (-ms-view-state: snapped) {
     .placedetails section[role=main] {
         margin-left: 20pt;
         margin-right: 20pt;
+        width:100%;
     }
 }
 

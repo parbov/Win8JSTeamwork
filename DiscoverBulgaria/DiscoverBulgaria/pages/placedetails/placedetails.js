@@ -33,7 +33,7 @@
                     }
                     if (!file) {  // If the URL is really malformed or blank.
                         var md = Windows.UI.Popups.MessageDialog("You haven't saved the file!");
-                        md.showAsync()
+                        //md.showAsync()
                     }
                 });
             });

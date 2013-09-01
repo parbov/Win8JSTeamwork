@@ -1,20 +1,40 @@
-﻿.homepage section[role=main] {
-    margin-left: 120pt;
-    margin-right: 120pt;
+﻿.fragment homepage {
+    padding-left: 100pt;
+}
+
+#imageId {
+    width:180pt;
+    height:180pt;
+}
+
+
+
+#short-place-template {
+}
+
+.homepage section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
 }
 
 @media screen and (-ms-view-state: snapped) {
     .homepage section[role=main] {
-        
-        margin-left: 0pt;
-        width:300pt;
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }
 
-@media screen and (-ms-view-state: portrait) {
+@media screen and (-ms-view-state: fullscreen-portrait) {
     .homepage section[role=main] {
-        margin-left: 100pt;
+        margin-left: 100px;
+        margin-right: 100px;
     }
+}
+
+
+win-container {
+    width: 100%;
+    height: 100%;
 }
 
 .win-listview
@@ -23,3 +43,9 @@
     height: 100%;
     border: solid 2pt rgba(0, 0, 0, 0.13);
 }
+
+.win-item {
+    background-color:none;
+}
+
+
