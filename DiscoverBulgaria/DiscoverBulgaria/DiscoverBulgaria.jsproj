@@ -72,6 +72,9 @@
     <Content Include="pages\placedetails\placedetails.css" />
     <Content Include="pages\placedetails\placedetails.html" />
     <Content Include="pages\placedetails\placedetails.js" />
+    <Content Include="pages\searchresults\searchresults.css" />
+    <Content Include="pages\searchresults\searchresults.html" />
+    <Content Include="pages\searchresults\searchresults.js" />
     <None Include="DiscoverBulgaria_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
