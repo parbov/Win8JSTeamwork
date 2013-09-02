@@ -6,8 +6,9 @@
     width: 250pt; 
 }
 
-#placesText {
-    width:850pt;
+#output {
+    width:80%;
+    
 }
 
 .placedetails div{
@@ -22,6 +23,7 @@
 
 #placeBar {
     width: 100%;
+    overflow-y:scroll;
 }
 
 @media screen and (-ms-view-state: snapped) {

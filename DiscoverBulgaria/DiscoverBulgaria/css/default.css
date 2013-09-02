@@ -1,6 +1,6 @@
 ﻿#contenthost {
     height: 100%;
-    width: 100%;
+    width: 96.62%;
 }
 
 .fragment {
@@ -71,4 +71,7 @@
     .fragment header[role=banner] {
         -ms-grid-columns: 29px 71px 1fr;
     }
+}
+
+.newStyle {
 }

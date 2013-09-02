@@ -22,21 +22,35 @@
             </h1>
         </header>
         <section id="sectionPlaces">
-        <span>
+        <div>
             <img id="placesImage" src="#" data-win-bind="src: imgUrl"/>
-        </span>
-            <span>
-                <dl>
-                    <dt>Name</dt>
-                    <dd id="name" data-win-bind="innerText: name"></dd>
-                    <dt>Region</dt>
-                    <dd data-win-bind="innerText: region"></dd>
-                    <dt>Information</dt>
-                    <dd id="output" ></dd>
-                </dl>
-                <button id="write-text">Save information to file</button>
-                <div id="placeBar" data-win-control="WinJS.UI.AppBar"></div>
+        </div>
+        <span style="overflow-y:scroll;">
+            <dl>
+                <dt>Name</dt>
+                <dd id="name" data-win-bind="innerText: name"></dd>
+                <dt>Region</dt>
+                <dd data-win-bind="innerText: region"></dd>
+                <div>
+                    <img class="imageHolder" id="capturedPhoto" alt="Captured image will appear here." 
+                        src="/images/imageplaceholder.png" style="border: solid; border-color: grey; display: none;"  />
+                </div>
+                <dt>Information</dt>
+                <dd id="output"></dd>
+            </dl>
+
+            <span id="placeBar" data-win-control="WinJS.UI.AppBar">
+                    <button
+                    data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'write-text',label:'Save information',icon:'save',type:'button'}">
+                </button>
+                <button 
+                    data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'capturePhoto',label:'Capture Photo',icon:'camera',type:'button'}">
+                </button>
             </span>
+
+        </span>
            
         </section>
     </div>
