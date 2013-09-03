@@ -12,24 +12,25 @@
 }
 
 .placedetails div{
-    padding-left: 120pt;
-    padding-right: 120pt;
 }
 
 #sectionPlaces {
-    padding-top: 120pt;
-    padding-left: 120pt;
+    margin-top:90pt;
+    margin-left:90pt;
+    overflow:auto;
+    width: 96%;
+    height: 450pt;
 }
 
 #placeBar {
     width: 100%;
-    overflow-y:scroll;
+    
 }
 
 @media screen and (-ms-view-state: snapped) {
     .placedetails section[role=main] {
-        margin-left: 20pt;
-        margin-right: 20pt;
+		margin-left:0;
+		padding-left:0;
         width:100%;
     }
 }

@@ -11,17 +11,17 @@
             var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
             var x = ViewModels.places.getAt(options.indexInPlacesList);
             
-
             WinJS.xhr({
-                url: "http://100places.apphb.com/api/places/get-place?url="+x.url,
+                url: "http://100places.apphb.com/api/places/get-place?url=" + x.url,
                 type: "GET"
             }).done(function (request) {
                 var outputElement = document.getElementById("output");
                 outputElement.innerHTML = request.responseText
             }, function (error) {
                 var md = Windows.UI.Popups.MessageDialog("Error connecting to service");
+                md.showAsync()
             });
-
+            
             
 
             dataTransferManager.ondatarequested = function (event) {
@@ -48,9 +48,34 @@
         },
 
         updateLayout: function (element, viewState, lastViewState) {
-            /// <param name="element" domElement="true" />
 
-            // TODO: Respond to changes in viewState.
+            // Respond to changes in viewState.
+
+            // Get the ListView control. 
+            var viewStateExampleListView =
+                element.querySelector("#grid").winControl;
+
+            // Use a ListLayout if the app is snapped or in full-screen portrait mode. 
+            if (viewState === Windows.UI.ViewManagement.ApplicationViewState.snapped ||
+                viewState === Windows.UI.ViewManagement.ApplicationViewState.fullScreenPortrait) {
+
+                // If layout.Horizontal is false, the ListView
+                // is already using a ListLayout, so we don't
+                // have to do anything. We only need to switch
+                // layouts when layout.horizontal is true. 
+                if (viewStateExampleListView.layout.horizontal) {
+                    viewStateExampleListView.layout = new WinJS.UI.ListLayout();
+                }
+            }
+
+                // Use a GridLayout if the app isn't snapped or in full-screen portrait mode. 
+            else {
+                // Only switch layouts if layout.horizontal is false. 
+                if (!viewStateExampleListView.layout.horizontal) {
+                    viewStateExampleListView.layout = new WinJS.UI.GridLayout();
+                }
+            }
+
         }
     });
 
@@ -68,7 +93,7 @@
             }
         }, function (err) { 
             var md = Windows.UI.Popups.MessageDialog("You haven't saved the file!");
-            //md.showAsync()
+            md.showAsync()
         });
     }
 
