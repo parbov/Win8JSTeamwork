@@ -1,8 +1,7 @@
-﻿.openimage section[role=main] {
+﻿.openimage section {
     margin-left: 120px;
     margin-right: 120px;
-    padding-top:200px;
-    margin-top:200px;
+    padding-top: 300px;
 }
 
 @media screen and (-ms-view-state: snapped) {

@@ -39,13 +39,13 @@
             var songEntry = document.createElement("li");
             songEntry.setAttribute("data-photo-url", songUrl);
             songEntry.innerHTML = "<strong>" + songName + "</strong>";
-            loadedSongsList.appendChild(songEntry);
+            loadedPhotosList.appendChild(songEntry);
         }
 
         var addPhoto = function (storageFile) {
             var fileUrl = URL.createObjectURL(storageFile);
 
-            storageFile.properties.getImagePropertiesAsync.then(function (properties) {
+            storageFile.properties.getImagePropertiesAsync().then(function (properties) {
                 properties.title
 
                 addPhotoListEntry(properties.title, fileUrl);

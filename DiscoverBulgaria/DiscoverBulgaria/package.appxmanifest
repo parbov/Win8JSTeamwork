@@ -2,9 +2,9 @@
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
   <Identity Name="23e5518d-940c-462b-b2df-7c196fbc809c" Version="1.0.0.0" Publisher="CN=Petko" />
   <Properties>
-    <DisplayName>DiscoverBulgaria</DisplayName>
     <PublisherDisplayName>Petko Arbov &amp; Kaloyan Gospodinov</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
+    <DisplayName>DiscoverBulgaria</DisplayName>
   </Properties>
   <Prerequisites>
     <OSMinVersion>6.2.1</OSMinVersion>
