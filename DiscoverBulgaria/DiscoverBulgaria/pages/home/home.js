@@ -9,25 +9,7 @@
 
         },
         ready: function (element, options) {
-            // TODO: Initialize the page here.
-            var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
             this.updateLayout(element, Windows.UI.ViewManagement.ApplicationView.value, null);
-
-            //dataTransferManager.ondatarequested = function (event) {
-            //    var deferral = event.request.getDeferral();
-            //    grid.winControl.selection.getItems().done(
-            //        function (items) {
-            //            if (items.length > 0) {
-            //                event.request.data.properties.title = "TweetScan";
-            //                event.request.data.properties.description = "Share tweet from " + items[0].data.from_user_name;
-            //                event.request.data.setText(items[0].data.text);
-
-            //            }
-            //        },
-            //        function (error) { console.error(error.message); }
-            //        );
-            //    deferral.complete();
-            //};
         },
 
         updateLayout: function (element, viewState, lastViewState) {

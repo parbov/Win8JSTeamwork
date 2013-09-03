@@ -24,17 +24,17 @@
 
             
 
-            var shareFileHandler = function (event) {
+            dataTransferManager.ondatarequested = function (event) {
                 var dataRequest = event.request;
-
+                var deferral = event.request.getDeferral();
+                
                 dataRequest.data.properties.title = (document.getElementById("name").innerHTML);
                 dataRequest.data.properties.description = "Text file from" + (document.getElementById("name").innerHTML);
                 //dataRequest.data.properties.fileTypes.replaceAll([".txt"]);
                 dataRequest.data.setText(document.getElementById("output").innerText);
+
+                deferral.complete();
             }
-
-            dataTransferManager.addEventListener("datarequested", shareFileHandler)
-
 
             document.getElementById("write-text").addEventListener("click", saveInfo,false);
             document.getElementById("capturePhoto").addEventListener("click", capturePhoto, false);
