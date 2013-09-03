@@ -8,8 +8,9 @@
         // populates the page elements with the app's data.
         
         ready: function (element, options) {
-
+            var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.getForCurrentView();
             var x = ViewModels.places.getAt(options.indexInPlacesList);
+            
 
             WinJS.xhr({
                 url: "http://100places.apphb.com/api/places/get-place?url="+x.url,
@@ -19,12 +20,25 @@
                 outputElement.innerHTML = request.responseText
             });
 
+            
+
+            var shareFileHandler = function (event) {
+                var dataRequest = event.request;
+
+                dataRequest.data.properties.title = (document.getElementById("name").innerHTML);
+                dataRequest.data.properties.description = "Text file from" + (document.getElementById("name").innerHTML);
+                //dataRequest.data.properties.fileTypes.replaceAll([".txt"]);
+                dataRequest.data.setText(document.getElementById("output").innerText);
+            }
+
+            dataTransferManager.addEventListener("datarequested", shareFileHandler)
+
+
             document.getElementById("write-text").addEventListener("click", saveInfo,false);
             document.getElementById("capturePhoto").addEventListener("click", capturePhoto, false);
+            document.getElementById("openGallery").addEventListener("click", openGallery, false);
 
             WinJS.Binding.processAll(element, x);
-
-            
         },
 
         unload: function () {
@@ -72,5 +86,9 @@
         });
     }
 
-   
+    function openGallery() {
+        WinJS.Navigation.navigate("/pages/openimage/openimage.html")
+    }
+
+
 })();

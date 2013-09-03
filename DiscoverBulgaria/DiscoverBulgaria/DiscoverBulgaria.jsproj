@@ -69,6 +69,9 @@
     <Content Include="pages\home\home.js" />
     <Content Include="default.html" />
     <Content Include="pages\home\homecodebehind.js" />
+    <Content Include="pages\openimage\openimage.css" />
+    <Content Include="pages\openimage\openimage.html" />
+    <Content Include="pages\openimage\openimage.js" />
     <Content Include="pages\placedetails\placedetails.css" />
     <Content Include="pages\placedetails\placedetails.html" />
     <Content Include="pages\placedetails\placedetails.js" />
