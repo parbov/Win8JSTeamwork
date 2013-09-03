@@ -15,9 +15,11 @@
             WinJS.xhr({
                 url: "http://100places.apphb.com/api/places/get-place?url="+x.url,
                 type: "GET"
-            }).then(function (request) {
+            }).done(function (request) {
                 var outputElement = document.getElementById("output");
                 outputElement.innerHTML = request.responseText
+            }, function (error) {
+                var md = Windows.UI.Popups.MessageDialog("Error connecting to service");
             });
 
             

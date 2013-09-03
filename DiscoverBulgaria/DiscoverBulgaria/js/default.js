@@ -21,7 +21,7 @@
             }
 
             if (app.sessionState.history) {
-                nav.history = app.sessionState.history;
+               // nav.history = app.sessionState.history;
             }
             args.setPromise(WinJS.UI.processAll().then(function () {
                 if (nav.location) {
