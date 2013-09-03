@@ -22,34 +22,41 @@
     });
 
     function userSavedImage() {
-        // Verify that we are currently not snapped, or that we can unsnap to open the picker
-        var currentState = Windows.UI.ViewManagement.ApplicationView.value;
-        if (currentState === Windows.UI.ViewManagement.ApplicationViewState.snapped &&
-            !Windows.UI.ViewManagement.ApplicationView.tryUnsnap()) {
-            // Fail silently if we can't unsnap
-            return;
+        var loadedPhotosList = document.getElementById("loaded-photos");
+        var player = document.getElementById("openedPhoto");
+
+        loadedPhotosList.addEventListener("click", function (event) {
+            var photoEntry = event.target;
+
+            if (photoEntry.tagName.toLowerCase() == "strong") {
+                photoEntry = photoEntry.parentElement;
+            }
+
+            player.src = photoEntry.getAttribute("data-song-url");
+        });
+
+        var addPhotoListEntry = function (songName, songUrl) {
+            var songEntry = document.createElement("li");
+            songEntry.setAttribute("data-photo-url", songUrl);
+            songEntry.innerHTML = "<strong>" + songName + "</strong>";
+            loadedSongsList.appendChild(songEntry);
         }
 
-        // Create the picker object and set options
-        var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
-        openPicker.viewMode = Windows.Storage.Pickers.PickerViewMode.thumbnail;
-        openPicker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.picturesLibrary;
-        // Users expect to have a filtered view of their folders depending on the scenario.
-        // For example, when choosing a documents folder, restrict the filetypes to documents for your application.
-        openPicker.fileTypeFilter.replaceAll([".png", ".jpg", ".jpeg"]);
+        var addPhoto = function (storageFile) {
+            var fileUrl = URL.createObjectURL(storageFile);
 
-        // Open the picker for the user to pick a file
-        openPicker.pickSingleFileAsync().then(function (file) {
-            if (file) {
-                var img = document.createElement("IMG");
-                img.src = file;
-                document.getElementById("openedPhoto").appendChild(img)
-                WinJS.log && WinJS.log("Picked photo: " + file.name, "sample", "status");
+            storageFile.properties.getImagePropertiesAsync.then(function (properties) {
+                properties.title
 
-            } else {
-                // The picker was dismissed with no selected file
-                WinJS.log && WinJS.log("Operation cancelled.", "sample", "status");
-            }
+                addPhotoListEntry(properties.title, fileUrl);
+            });
+        }
+
+        WinJS.Utilities.id("userSavedImageButton").listen("click", function () {
+            var openPicker = Windows.Storage.Pickers.FileOpenPicker();
+
+            openPicker.fileTypeFilter.append("*");
+            openPicker.pickSingleFileAsync().then(addPhoto);
         });
     }
 

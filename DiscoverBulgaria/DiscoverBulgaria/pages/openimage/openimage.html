@@ -20,12 +20,18 @@
                 <span class="pagetitle">Welcome to openimage</span>
             </h1>
         </header>
-        <section aria-label="Main content" role="main">
+        
+        <section>
+            <img src="ms"/>
 
-            <button id="userSavedImageButton">Open image</button>
-            <img id="openedPhoto" alt="Captured image will appear here." 
-                            src="/images/imageplaceholder.png" style="border: solid; border-color: grey; display: none;"  />
         </section>
+            <button id="userSavedImageButton">Open image</button>
+            <div>
+                 <img id="openedPhoto" alt="Captured image will appear here." 
+                            src="" style="border: solid; border-color: grey; display: none;"  />
+            </div>
+            <ul id="loaded-photos"></ul>
+        
     </div>
 </body>
 </html>
