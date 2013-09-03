@@ -1,13 +1,13 @@
-﻿.fragment homepage {
-    padding-left: 100pt;
+﻿
+
+#grid{
+	margin-left:100px;
 }
 
 #imageId {
     width:180pt;
     height:180pt;
 }
-
-
 
 #short-place-template {
 }
@@ -25,21 +25,23 @@
 
 @media screen and (-ms-view-state: fullscreen-portrait) {
     .homepage section[role=main] {
-        margin-left: 100px;
-        margin-right: 100px;
+        
     }
+	.win-item{
+		position:relative;
+		width:250px;
+	}
 }
 
 
 win-container {
-    width: 100%;
-    height: 100%;
+    
 }
 
 .win-listview
 {
-    width: 91%;
-    height: 100.18%;
+    width: 91.6%;
+    height: 101.08%;
     border: solid 2pt rgba(0, 0, 0, 0.13);
 }
 

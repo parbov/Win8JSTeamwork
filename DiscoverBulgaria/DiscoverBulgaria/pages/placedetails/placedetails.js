@@ -14,7 +14,7 @@
             WinJS.xhr({
                 url: "http://100places.apphb.com/api/places/get-place?url=" + x.url,
                 type: "GET"
-            }).done(function (request) {
+            }).then(function (request) {
                 var outputElement = document.getElementById("output");
                 outputElement.innerHTML = request.responseText
             }, function (error) {
@@ -53,7 +53,8 @@
 
             // Get the ListView control. 
             var viewStateExampleListView =
-                element.querySelector("#grid").winControl;
+                element.querySelector("#placeBar").winControl;
+            
 
             // Use a ListLayout if the app is snapped or in full-screen portrait mode. 
             if (viewState === Windows.UI.ViewManagement.ApplicationViewState.snapped ||

@@ -41,7 +41,9 @@
         // Open the picker for the user to pick a file
         openPicker.pickSingleFileAsync().then(function (file) {
             if (file) {
-
+                var img = document.createElement("IMG");
+                img.src = file;
+                document.getElementById("openedPhoto").appendChild(img)
                 WinJS.log && WinJS.log("Picked photo: " + file.name, "sample", "status");
 
             } else {
