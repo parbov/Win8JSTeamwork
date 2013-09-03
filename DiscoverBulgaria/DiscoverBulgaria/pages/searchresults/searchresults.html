@@ -29,16 +29,16 @@
         <header aria-label="Header content" role="banner">
             <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
             <div class="titlearea">
-                <h1 class="pagetitle win-type-ellipsis"></h1>
+                <h1 class="pagetitle win-type-ellipsis" style="margin-left: 39px; margin-right: -352.18px; -ms-grid-column-span: 1; -ms-grid-column: 4;">Search results:</h1>
                 <h2 class="pagesubtitle win-type-ellipsis"></h2>
             </div>
         </header>
-        <section aria-label="Main content" role="main" id="searchSection">
+        <section aria-label="Main content" role="main" id="searchSection" style="margin: -50px -2px 124px 2px;">
             <div data-win-control="WinJS.UI.ListView" data-win-options="{
                 itemTemplate: select('#search-item-template'),
                 itemDataSource: ViewModels.searchPlaces.dataSource,
                 oniteminvoked: HomeCodeBehind.goToPlaceDetailsPage
-                }" >
+                }" style="margin: 38px 44px 110px 100px; -ms-grid-row-span: 1; -ms-grid-row: 2;" >
 
             </div>
         </section>
